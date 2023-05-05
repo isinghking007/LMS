@@ -1,0 +1,60 @@
+<h1>Register</h1>
+<h2>{{responseMessage}}</h2>
+<mat-grid-list cols="2" rowHeight="100px" gutterSize="8px" [formGroup]="registerForm">
+    <!-- First Name -->
+    <mat-grid-tile>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+            <mat-error>Field is required!</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <!-- LastName -->
+    <mat-grid-tile>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <!-- Email -->
+    <mat-grid-tile>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <!-- Password -->
+    <mat-grid-tile>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password':'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide">
+                <mat-icon>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+            </button>
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <!-- Confirm Password -->
+    <mat-grid-tile>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="cpassword" [type]="hide ? 'password':'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide">
+                <mat-icon>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+            </button>
+            <mat-error>Error</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <!-- Create Account button -->
+    <mat-grid-tile colspan="2">
+        <button mat-flat-button color="accent" class="create-account-btn" (click)="register()" [disabled]="registerForm.invalid">Create Account</button>
+    </mat-grid-tile>
+
+</mat-grid-list>
+<!-- Login Link -->
+<div class="login-link">
+    <span>Already have an account?</span>
+    <button mat-stroked-button color="accent" routerLink="/login">Log in</button>
+</div>

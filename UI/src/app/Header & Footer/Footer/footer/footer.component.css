@@ -1,0 +1,10 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+h1,
+h2,
+h5,
+h6 {
+    margin: 0;
+}

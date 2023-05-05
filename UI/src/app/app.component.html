@@ -1,0 +1,14 @@
+<app-header (menuClicked)="sideNav.toggle()"></app-header>
+
+<!-- Angular SideNav -->
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sideNav opened class="mat-elevation-z6">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<app-footer></app-footer>
